@@ -56,7 +56,7 @@ def range(a, b=None, c=None):
                 ret += c
     else:
         if c is None:
-            while ret-1 > b:
+            while ret - 1 > b:
                 yield ret
                 ret -= 1
 
