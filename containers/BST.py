@@ -278,9 +278,9 @@ class BST(BinaryTree):
                 root = None
                 return temp
 
-            temp = BST.find_smallest2(root.right)
-            root.value = temp.value
-            root.right = BST._remove(root.right, temp.value)
+            temp = BST._find_smallest(root.right)
+            root.value = temp
+            root.right = BST._remove(root.right, temp)
 
         return root
 
