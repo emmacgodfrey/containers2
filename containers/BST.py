@@ -188,7 +188,7 @@ class BST(BinaryTree):
         else:
             return BST._find_smallest(node.left)
 
-    def find_smallest2(node):
+    def find_smallest2(self, node):
         assert node is not None
         if node.left is None:
             return node
