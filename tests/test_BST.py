@@ -57,6 +57,28 @@ def test__BST_is_bst_satisified5():
     bst.root.right.right = Node(3)
     assert bst.is_bst_satisfied()
 
+def test__BST_is_bst_satisified6():
+    bst = BST()
+    bst.root = Node(0)
+    bst.root.left = Node(-2)
+    bst.root.left.left = Node(-3)
+    bst.root.left.right = Node(-1)
+    bst.root.right = Node(2)
+    bst.root.right.left = Node(-1)
+    bst.root.right.right = Node(3)
+    assert not bst.is_bst_satisfied()
+
+def test__BST_is_bst_satisified7():
+    bst = BST()
+    bst.root = Node(0)
+    bst.root.left = Node(-2)
+    bst.root.left.left = Node(-3)
+    bst.root.left.right = Node(1)
+    bst.root.right = Node(2)
+    bst.root.right.left = Node(1)
+    bst.root.right.right = Node(3)
+    assert not bst.is_bst_satisfied()
+
 ################################################################################
 
 import random
@@ -259,3 +281,22 @@ def test__BST_inorder_property(xs):
     bst2 = BST(xs2)
     
     assert bst1.to_list('inorder') == bst2.to_list('inorder')
+
+
+@given(xs=ints)
+def test__BST_eq(xs):
+    '''
+    This test is essentially the same as the previous one,
+    but tests the == operator specifically.
+    '''
+    xs = list(set(xs))
+
+    xs1 = copy.copy(xs)
+    random.shuffle(xs1)
+    bst1 = BST(xs1)
+
+    xs2 = copy.copy(xs)
+    random.shuffle(xs2)
+    bst2 = BST(xs2)
+
+    assert bst1 == bst2
