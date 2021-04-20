@@ -78,7 +78,8 @@ class BinaryTree():
         elif traversal_type == 'postorder':
             return self.postorder_print(self.root, '')
         else:
-            raise ValueError('Traversal type ' + str(traversal_type) + ' is not supported.')
+            raise ValueError('Traversal type ' + str(traversal_type) +
+                             ' is not supported.')
 
     def preorder_print(self, start, traversal):
         '''
@@ -141,7 +142,8 @@ class BinaryTree():
         elif traversal_type == 'postorder':
             return self.postorder(self.root, [])
         else:
-            raise ValueError('Traversal type ' + str(traversal_type) + ' is not supported.')
+            raise ValueError('Traversal type ' + str(traversal_type) +
+                             ' is not supported.')
 
     def preorder(self, start, traversal):
         '''
@@ -188,8 +190,10 @@ class BinaryTree():
         HINT:
         The pseudocode is:
         add 1 for the current node;
-        if a left child exists, add the result of __len__helper on the left child;
-        if a right child exists, add the result of __len__helper on the right child;
+        if a left child exists, add the result of __len__helper
+        on the left child;
+        if a right child exists, add the result of __len__helper
+        on the right child;
         return the sum of these three steps
         '''
 
@@ -212,7 +216,7 @@ class BinaryTree():
         HINT:
         See how the __len__ method calls its helper staticmethod.
         '''
-        return 1 + BinaryTree._height(self.root) 
+        return BinaryTree._height(self.root)
 
     @staticmethod
     def _height(node):
@@ -224,15 +228,11 @@ class BinaryTree():
         The pseudocode is:
         if a left child exists, calculate the _height of the left child;
         if a right child exists, calculate the _height of the right child;
-        return 1 (for the current node) plus the max of the left and right _heights calculated above
+        return 1 (for the current node) plus the max of the left
+        and right _heights calculated above
         '''
-        left = 0
-        right = 0
         if node:
-            if node.left:
-                left = BinaryTree._height(node.left) + 1 
-            if node.right:
-                right = BinaryTree._height(node.right) + 1
-            return max(left,right)
-        else: 
+            return (1 + max(BinaryTree._height(node.left),
+                            BinaryTree._height(node.right)))
+        else:
             return -1 
