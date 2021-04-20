@@ -4,7 +4,6 @@ from containers.AVLTree import AVLTree
 
 ################################################################################
 # these tests are specific for AVLTree rotations
-
 avltree0 = AVLTree()
 avltree0.root = Node(5)
 avltree0.root.left = Node(3)
