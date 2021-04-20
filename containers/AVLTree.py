@@ -172,6 +172,8 @@ class AVLTree(BST):
                 node.left = rebal
             else:
                 node.left = Node(value)
+                rebal = AVLTree._rebalance(node.left)
+                node.left = rebal
         if value > node.value:
             if node.right:
                 AVLTree._insert(value, node.right)
@@ -179,6 +181,8 @@ class AVLTree(BST):
                 node.right = rebal
             else:
                 node.right = Node(value)
+                rebal = AVLTree._rebalance(node.right)
+                node.right = rebal
 
     @staticmethod
     def _rebalance(node):
@@ -189,7 +193,7 @@ class AVLTree(BST):
         so I recommend including that code here.
         '''
         if AVLTree._balance_factor(node) < -1:
-            if AVLTree._balance_factor(node.right) > 1:
+            if AVLTree._balance_factor(node.right) > 0:
                 rightrot = AVLTree._right_rotate(node.right)
                 node.right = rightrot
                 leftrot = AVLTree._left_rotate(node)
@@ -199,7 +203,7 @@ class AVLTree(BST):
                 node = leftrot
             return node
         elif AVLTree._balance_factor(node) > 1:
-            if AVLTree._balance_factor(node.left) < -1:
+            if AVLTree._balance_factor(node.left) < 0:
                 leftrot = AVLTree._left_rotate(node.left)
                 node.left = leftrot
                 rightrot = AVLTree._right_rotate(node)
