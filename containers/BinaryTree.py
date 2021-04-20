@@ -235,4 +235,4 @@ class BinaryTree():
             return (1 + max(BinaryTree._height(node.left),
                             BinaryTree._height(node.right)))
         else:
-            return -1 
+            return -1
