@@ -163,7 +163,7 @@ class Heap(BinaryTree):
 
     def insert_list(self, xs):
         '''
-        Given a list xs, insert each element of xs into self.
+        Given a list, insert each element of xs into self.
 
         FIXME:
         Implement this function.
