@@ -158,8 +158,7 @@ class Heap(BinaryTree):
         if root is None:
             return 0
         else:
-            return (1 + Heap._count_nodes(root.left)
-                    + Heap._count_nodes(root.right))
+            return (1 + Heap._count_nodes(root.left) + Heap._count_nodes(root.right))
 
     def insert_list(self, xs):
         '''
