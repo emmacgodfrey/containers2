@@ -1,5 +1,5 @@
 '''
-This file implements the Heap data structure as a subclass of the BinaryTree.
+this file implements the Heap data structure as a subclass of the BinaryTree.
 The book implements Heaps using an *implicit* tree with an *explicit* vector
 implementation, so the code in the book is likely to be less helpful than
 the code for the other data structures. The book's implementation is the
