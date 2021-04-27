@@ -249,12 +249,12 @@ class Heap(BinaryTree):
                     node.value = temp
                     Heap._trickle(node.right)
         elif node.left:
-                if node.value > node.left.value:
-                    temp = copy.copy(node.left.value)
-                    node.left.value = node.value
-                    node.value = temp
+            if node.value > node.left.value:
+                temp = copy.copy(node.left.value)
+                node.left.value = node.value
+                node.value = temp
         elif node.right:
-                if node.value > node.right.value:
-                    temp = copy.copy(node.right.value)
-                    node.right.value = node.value
-                    node.value = temp
+            if node.value > node.right.value:
+                temp = copy.copy(node.right.value)
+                node.right.value = node.value
+                node.value = temp
