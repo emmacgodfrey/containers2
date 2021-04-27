@@ -208,6 +208,7 @@ class Heap(BinaryTree):
             num_nodes = Heap._count_nodes(self.root)
             if num_nodes == 1:
                 self.root = None
+                return self.root
             binrep = "{0:b}".format(num_nodes)
             lbinrep = [int(x) for x in str(binrep)][1:]
             self.root.value = Heap._remove_bottom_right(path, lbinrep)
@@ -226,7 +227,7 @@ class Heap(BinaryTree):
                 temp = path.left.value
                 path.left = None
                 return temp
-        else:
+        elif len(lbinrep) > 1:
             if lbinrep[0] == 1:
                 return Heap._remove_bottom_right(path.right, lbinrep[1:])
             elif lbinrep[0] == 0:
