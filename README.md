@@ -7,3 +7,4 @@ Build status:
 2. [![tests-BinaryTree](https://github.com/emmacgodfrey/containers2/actions/workflows/tests-binarytree.yml/badge.svg?branch=bst)](https://github.com/emmacgodfrey/containers2/actions/workflows/tests-binarytree.yml)
 2. [![tests-BST](https://github.com/emmacgodfrey/containers2/actions/workflows/tests-BST.yml/badge.svg?branch=bst)](https://github.com/emmacgodfrey/containers2/actions/workflows/tests-BST.yml)
 [![tests-AVLTree](https://github.com/emmacgodfrey/containers2/actions/workflows/tests-AVLTree.yml/badge.svg)](https://github.com/emmacgodfrey/containers2/actions/workflows/tests-AVLTree.yml)
+[![tests-Heap](https://github.com/emmacgodfrey/containers2/actions/workflows/tests-Heap.yml/badge.svg)](https://github.com/emmacgodfrey/containers2/actions/workflows/tests-Heap.yml)
